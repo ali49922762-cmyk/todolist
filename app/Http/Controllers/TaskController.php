@@ -42,8 +42,8 @@ class TaskController extends Controller
     public function update(Request $request, $id)
 {
     $validate = $request->validate([
-        'title'  => ['string'],
-        'status' => ['string'],
+        'title'  => ['required','string','max:255'],
+        'status' => ['required','string','max:255'],
     ]);
 
     $task = Task::where('id', $id)
